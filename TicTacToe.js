@@ -6,6 +6,8 @@ const cells = document.querySelectorAll(".cell");
 
 const displayWinner = document.getElementById("Display_Winner");
 
+const winningLineDiv = document.getElementById("winnerLine");
+
 console.log("displayWinner:"+displayWinner)
 
 //testing
@@ -62,10 +64,17 @@ function switchPlayer(){
 //Check Winner
 function checkWinner(){
     console.log("Inside checkWinner");
+
+    let winnerLine = document.createElement("div");
+
+
+
     //Horizontal scenarios
     if(cells[0].innerHTML===cells[1].innerHTML && cells[0].innerHTML===cells[2].innerHTML){
         if(cells[0].innerHTML === "X" || cells[0].innerHTML === "O"){
             console.log("Winner is:"+cells[0].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.top = "8em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -73,6 +82,8 @@ function checkWinner(){
     if(cells[3].innerHTML===cells[4].innerHTML && cells[3].innerHTML===cells[5].innerHTML){
         if(cells[3].innerHTML === "X" || cells[3].innerHTML === "O"){
             console.log("Winner is:"+cells[3].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.top = "14.5em";
             displayWinner.innerHTML =cells[3].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -80,6 +91,8 @@ function checkWinner(){
     if(cells[6].innerHTML===cells[7].innerHTML && cells[6].innerHTML===cells[8].innerHTML){
         if(cells[6].innerHTML === "X" || cells[6].innerHTML === "O"){
             console.log("Winner is:"+cells[6].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.top = "21em";
             displayWinner.innerHTML =cells[6].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -89,6 +102,10 @@ function checkWinner(){
     if(cells[0].innerHTML===cells[3].innerHTML && cells[0].innerHTML===cells[6].innerHTML){
         if(cells[0].innerHTML === "X" || cells[0].innerHTML === "O"){
             console.log("Winner is:"+cells[0].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.transform = "rotate(90deg)";
+            winningLineDiv.style.top = "14.5em";
+            winningLineDiv.style.left = "6em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -96,6 +113,10 @@ function checkWinner(){
     if(cells[1].innerHTML===cells[4].innerHTML && cells[1].innerHTML===cells[7].innerHTML){
         if(cells[1].innerHTML === "X" || cells[1].innerHTML === "O"){
             console.log("Winner is:"+cells[1].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.transform = "rotate(90deg)";
+            winningLineDiv.style.top = "14.5em";
+            winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[1].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -103,6 +124,10 @@ function checkWinner(){
     if(cells[2].innerHTML===cells[5].innerHTML && cells[2].innerHTML===cells[8].innerHTML){
         if(cells[2].innerHTML === "X" || cells[2].innerHTML === "O"){
             console.log("Winner is:"+cells[2].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.transform = "rotate(90deg)";
+            winningLineDiv.style.top = "14.5em";
+            winningLineDiv.style.left = "19em";
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -112,6 +137,10 @@ function checkWinner(){
     if(cells[0].innerHTML===cells[4].innerHTML && cells[0].innerHTML===cells[8].innerHTML){
         if(cells[0].innerHTML === "X" || cells[0].innerHTML === "O"){
             console.log("Winner is:"+cells[0].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.transform = "rotate(45deg)";
+            winningLineDiv.style.top = "14.5em";
+            winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playable = false;
         }
@@ -119,6 +148,10 @@ function checkWinner(){
     if(cells[2].innerHTML===cells[4].innerHTML && cells[2].innerHTML===cells[6].innerHTML){
         if(cells[2].innerHTML === "X" || cells[2].innerHTML === "O"){
             console.log("Winner is:"+cells[2].innerHTML)
+            winningLineDiv.classList.toggle("active");
+            winningLineDiv.style.transform = "rotate(135deg)";
+            winningLineDiv.style.top = "14.5em";
+            winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
             playable = false;
         }
