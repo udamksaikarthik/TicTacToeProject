@@ -50,6 +50,7 @@ function whichCell(e){
 
         //Check Winner 
         checkWinner();
+
         //Switching Turns for Players
         switchPlayer();
     }
@@ -69,7 +70,20 @@ function switchPlayer(){
 //Check Winner
 function checkWinner(){
     console.log("Inside checkWinner");
+    
+    let flag = false;
 
+        //Check for draw
+        for(let i=0;i<cells.length;i++){
+            let content = cells[i].innerHTML;
+            if(content === "X" || content === "O"){
+                flag = true;
+            }else{
+                flag = false;
+                break;
+            }
+        };
+        
     let winnerLine = document.createElement("div");
 
 
@@ -83,6 +97,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
     if(cells[3].innerHTML===cells[4].innerHTML && cells[3].innerHTML===cells[5].innerHTML){
@@ -93,6 +108,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[3].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
     if(cells[6].innerHTML===cells[7].innerHTML && cells[6].innerHTML===cells[8].innerHTML){
@@ -103,6 +119,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[6].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
 
@@ -117,6 +134,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
     if(cells[1].innerHTML===cells[4].innerHTML && cells[1].innerHTML===cells[7].innerHTML){
@@ -129,6 +147,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[1].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
     if(cells[2].innerHTML===cells[5].innerHTML && cells[2].innerHTML===cells[8].innerHTML){
@@ -141,6 +160,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
 
@@ -155,6 +175,7 @@ function checkWinner(){
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
     if(cells[2].innerHTML===cells[4].innerHTML && cells[2].innerHTML===cells[6].innerHTML){
@@ -167,9 +188,21 @@ function checkWinner(){
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;
+            flag = false;
         }
     }
+
+        if(flag){
+            displayWinner.style.color="#000000";
+            displayWinner.innerHTML ="Draw!!!";
+            playAgainButton.classList.toggle('active');
+        }
+
+
 }
+
+
+
 
 function playAgain(){
     location.reload();
