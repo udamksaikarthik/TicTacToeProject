@@ -8,6 +8,11 @@ const displayWinner = document.getElementById("Display_Winner");
 
 const winningLineDiv = document.getElementById("winnerLine");
 
+const playAgainButton = document.getElementById("playAgain");
+
+
+const win_div_id = document.getElementById("win_div_id");
+
 console.log("displayWinner:"+displayWinner)
 
 //testing
@@ -76,6 +81,7 @@ function checkWinner(){
             winningLineDiv.classList.toggle("active");
             winningLineDiv.style.top = "8em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -85,6 +91,7 @@ function checkWinner(){
             winningLineDiv.classList.toggle("active");
             winningLineDiv.style.top = "14.5em";
             displayWinner.innerHTML =cells[3].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -94,6 +101,7 @@ function checkWinner(){
             winningLineDiv.classList.toggle("active");
             winningLineDiv.style.top = "21em";
             displayWinner.innerHTML =cells[6].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -107,6 +115,7 @@ function checkWinner(){
             winningLineDiv.style.top = "14.5em";
             winningLineDiv.style.left = "6em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -118,6 +127,7 @@ function checkWinner(){
             winningLineDiv.style.top = "14.5em";
             winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[1].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -129,6 +139,7 @@ function checkWinner(){
             winningLineDiv.style.top = "14.5em";
             winningLineDiv.style.left = "19em";
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -142,6 +153,7 @@ function checkWinner(){
             winningLineDiv.style.top = "14.5em";
             winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
@@ -153,8 +165,13 @@ function checkWinner(){
             winningLineDiv.style.top = "14.5em";
             winningLineDiv.style.left = "12.8em";
             displayWinner.innerHTML =cells[2].innerHTML +" is Winner!!";
+            playAgainButton.classList.toggle('active');
             playable = false;
         }
     }
+}
+
+function playAgain(){
+    location.reload();
 }
 
