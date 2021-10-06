@@ -70,6 +70,7 @@ function switchPlayer(){
 //Check Winner
 function checkWinner(){
     console.log("Inside checkWinner");
+    let mediaQuery = window.matchMedia("(max-width : 450px)");
     
     let flag = false;
 
@@ -130,7 +131,15 @@ function checkWinner(){
             winningLineDiv.classList.toggle("active");
             winningLineDiv.style.transform = "rotate(90deg)";
             winningLineDiv.style.top = "14.5em";
-            winningLineDiv.style.left = "6em";
+            winningLineDiv.style.left = "34%";
+            function setLeft(mediaQuery){
+                if(mediaQuery.matches){
+                    winningLineDiv.style.left = "-3.9em";
+                }else{
+
+                }
+            }
+            setLeft(mediaQuery);
             displayWinner.innerHTML =cells[0].innerHTML +" is Winner!!";
             playAgainButton.classList.toggle('active');
             playable = false;

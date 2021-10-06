@@ -89,3 +89,9 @@ td{
 .playAgain.active{
     display: block;
 }
+
+@media (max-width:450px){
+    body{
+        background-color: grey;
+    }
+}
